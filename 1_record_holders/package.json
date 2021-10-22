@@ -1,0 +1,32 @@
+{
+  "name": "exiled-holders",
+  "version": "1.0.0",
+  "description": "Command line utilities for identifying wallets that hold an exiled ape on any given day.",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "tsc -p ./src",
+    "watch": "tsc -w -p ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exiled-apes/exiled-holders.git"
+  },
+  "author": "Exiled Apes Foundation",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/exiled-apes/exiled-holders/issues"
+  },
+  "homepage": "https://github.com/exiled-apes/exiled-holders#readme",
+  "dependencies": {
+    "@solana/web3.js": "^1.25.0",
+    "commander": "^8.1.0",
+    "p-retry": "^4.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.0",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
+  }
+}
