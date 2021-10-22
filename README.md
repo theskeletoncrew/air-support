@@ -2,10 +2,12 @@
 
 # Air Support: Tools for Automating Airdrops of Solana NFTs
 
-Created by [The Skeleton Crew](https://skeletoncrew.rip)  
-Twitter: [@skeletoncrewrip](https://twitter.com/skeletoncrewrip)  
+[The Skeleton Crew](https://skeletoncrew.rip) | Twitter: [@skeletoncrewrip](https://twitter.com/skeletoncrewrip) |  Discord: [Skeleton Crew](https://discord.gg/skeletoncrewrip)
 
-See also: [Treat Toolbox](https://github.com/theskeletoncrew/treat-toolbox), a generative art manager for NFT projects from the Skeleton Crew.
+Feeling generous? Your contributions help fund future development.  
+Send tips to our Solana wallet: CH6afYjjydFLPSrfQYEUNCdSNohLCAQV6ir6QnYeZU3t  
+
+_See also: [Treat Toolbox](https://github.com/theskeletoncrew/treat-toolbox), a generative art manager for NFT projects from the Skeleton Crew._
 
 
 # Background
