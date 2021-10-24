@@ -1,6 +1,5 @@
 import { Connection, PublicKey } from "@solana/web3.js";
-import { createInterface } from "readline";
-import { createReadStream } from "fs";
+import { readFileSync } from "fs";
 import { program } from "commander";
 import pRetry from "p-retry";
 
@@ -9,12 +8,12 @@ program
   .option(
     "-t, --token-address-log <string>",
     "token accounts",
-    "../token-mint-addresses.log"
+    "../token-mint-addresses.json"
   )
   .option(
     "-e, --rpc-host <string>",
     "rpc host",
-    "https://mainnet-beta.api.solana.com"
+    "https://api.mainnet-beta.solana.com"
   )
   .option(
     "-c, --chill <number>",
@@ -47,13 +46,11 @@ async function mineCurrentHolder(
 }
 
 async function main() {
-  const lineReader = createInterface({
-    input: createReadStream(tokenAddressLog),
-    crlfDelay: Infinity,
-  });
+  const mintList = JSON.parse(
+    readFileSync(tokenAddressLog, 'utf8')
+  ) as Array<string>;
 
-  for await (const line of lineReader) {
-    const tokenAccount = line.split(" ").pop()!;
+  for await (const tokenAccount of mintList) {
     const currentHolder = await pRetry(
       async () => await mineCurrentHolder(tokenAccount),
       {
