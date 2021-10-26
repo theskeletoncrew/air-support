@@ -22,7 +22,7 @@ do
 
 echo ""
 
-echo "${METAPLEX_PATH}/rust/target/debug/spl-token-metadata-test-client \
+echo "${METAPLEX_PATH}/rust/target/debug/metaplex-token-metadata-test-client \
   --keypair ${KEYPAIR} \
   mint_new_edition_from_master_edition_via_token \
   --mint ${MINT_ADDRESS} \
@@ -31,7 +31,7 @@ echo "${METAPLEX_PATH}/rust/target/debug/spl-token-metadata-test-client \
 
 echo ""
 
-${METAPLEX_PATH}/rust/target/debug/spl-token-metadata-test-client \
+${METAPLEX_PATH}/rust/target/debug/metaplex-token-metadata-test-client \
   --keypair ${KEYPAIR} \
   mint_new_edition_from_master_edition_via_token \
   --mint ${MINT_ADDRESS} \
