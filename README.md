@@ -28,10 +28,18 @@ In order to use Air Support, you will need to install and configure the current 
 
 Also, have a look at the configuration options at the top of the `Makefile`. At minimum, you'll need to specify paths to Metaplex, your keyfile, and an RPC Host. It's highly recommended that you use a third-party RPC provider to perform large airdrops. DROP is a name for a set of airdrops; in our case we numbered these 1-31 for each day in October. TYPE is a name for a single airdropped item that's part of a drop; in our case we had a "trick" and a "treat" as part of each drop, sometimes even "trick1", "trick2"... etc. The name will be "token" by default, and is used to prefix log files in each step below.  
 
+For the generate step to work, you will need to build Metaplex's rust tools. Inside `metaplex/rust`, run:
+
+```bash
+cargo build
+```
+
 
 # How to Use Air Support
 
-The basic workflow looks something like this:  
+Prerequisites: follow all steps in the Getting Started section above.
+
+Then, the basic workflow looks something like this:  
 
 📇 **prepare**: Collect a list of token mint addresses, for which the holders of those tokens represent a community you wish to airdrop to. This is sometimes done by providing your Candy Machine address to https://tools.abstratica.art. Store this in the air support root directory as `token-mint-addresses.log`.   
   
