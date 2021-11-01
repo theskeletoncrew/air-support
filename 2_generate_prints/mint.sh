@@ -1,6 +1,6 @@
 #!/bin/bash
 
-METAPLEX_PATH=../${1:-"../metaplex"}
+METAPLEX_PATH=${1:-"../metaplex"}
 KEYPAIR=$2
 MINT_ADDRESS=$3
 DROP=$4
