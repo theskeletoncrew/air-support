@@ -34,6 +34,10 @@ For the generate step to work, you will need to build Metaplex's rust tools. Ins
 cargo build
 ```
 
+You will also need a few other pieces of software installed, including: 
+- gshuf: `brew install coreutils`
+- jq: `brew install jq`
+
 
 # How to Use Air Support
 
