@@ -45,7 +45,7 @@ Prerequisites: follow all steps in the Getting Started section above.
 
 Then, the basic workflow looks something like this:  
 
-📇 **prepare**: Collect a list of token mint addresses, for which the holders of those tokens represent a community you wish to airdrop to. This is sometimes done by providing your Candy Machine address to https://tools.abstratica.art. Store this in the air support root directory as `token-mint-addresses.log`.   
+📇 **prepare**: Collect a list of token mint addresses, for which the holders of those tokens represent a community you wish to airdrop to. This is sometimes done by providing your Candy Machine address to https://tools.abstratica.art. Store this in the air support root directory as `token-mint-addresses.json`.   
   
   
 ✍️ **record**: run this to fetch the wallet addresses of all users that hold the tokens, and don't have them listed on a secondary exchange. The goal here is to avoid sending airdrops to exchanges where they may not be recoverable. Note: As of now, Air Support can only identify tokens listed on Digital Eyes, Magic Eden, Solanart, and Alpha.art. FTX and Solsea use unique addresses for escrow wallets. The command below will fetch the addresses and store them in `airdrops/1/token-holders.log`.  
