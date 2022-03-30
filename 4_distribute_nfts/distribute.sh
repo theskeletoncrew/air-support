@@ -19,6 +19,9 @@ if [ ! -f ${RECIPIENT_LIST_FILE} ]; then
     exit 1
 fi
 
+
+
+
 TOKEN_LIST=()
 while IFS= read -r line; do
    TOKEN_LIST+=("$line")
@@ -26,12 +29,29 @@ done <${TOKEN_LIST_FILE}
 
 RECIPIENT_LIST=()
 while IFS= read -r line; do
-   RECIPIENT_LIST+=("$line")
++   RECIPIENT_LIST+=("$line")
 done <${RECIPIENT_LIST_FILE}
 
-TOKEN_COUNT=${#TOKEN_LIST[@]}
+if [ "${#TOKEN_LIST[@]}" -ne "${#RECIPIENT_LIST[@]}" ]; then
+    echo "Recipient Length: ${#TOKEN_LIST[@]} is not equal to Minted Tokens Length: ${#RECIPIENT_LIST[@]}"
+    echo "Do you wish to continue?"
+    select yn in "Yes" "No"; do
+    case $yn in
+        Yes )break;;
+        No ) echo "1"; exit;;
+    esac
+done
 
-for (( i=$STARTINDEX; i<${TOKEN_COUNT}; i++ ));
+fi
+
+if [ "${#TOKEN_LIST[@]}" -lt "${#RECIPIENT_LIST[@]}" ]; then
+    LOOP_COUNT = ${#TOKEN_LIST[@]}
+else
+    LOOP_COUNT = ${#RECIPIENT_LIST[@]}
+fi
+
+
+for (( i=$STARTINDEX; i<${LOOP_COUNT}; i++ ));
 do
   TOKEN_MINT_ADDRESS=${TOKEN_LIST[$i]}
   RECIPIENT=${RECIPIENT_LIST[$i]}
