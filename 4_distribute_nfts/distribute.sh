@@ -29,25 +29,25 @@ done <${TOKEN_LIST_FILE}
 
 RECIPIENT_LIST=()
 while IFS= read -r line; do
-+   RECIPIENT_LIST+=("$line")
+   RECIPIENT_LIST+=("$line")
 done <${RECIPIENT_LIST_FILE}
 
 if [ "${#TOKEN_LIST[@]}" -ne "${#RECIPIENT_LIST[@]}" ]; then
-    echo "Recipient Length: ${#TOKEN_LIST[@]} is not equal to Minted Tokens Length: ${#RECIPIENT_LIST[@]}"
+    echo "Recipient Length: ${#RECIPIENT_LIST[@]} is not equal to Minted Tokens Length: ${#TOKEN_LIST[@]}"
     echo "Do you wish to continue?"
     select yn in "Yes" "No"; do
     case $yn in
         Yes )break;;
-        No ) echo "1"; exit;;
+        No ) exit;;
     esac
 done
 
 fi
 
 if [ "${#TOKEN_LIST[@]}" -lt "${#RECIPIENT_LIST[@]}" ]; then
-    LOOP_COUNT = ${#TOKEN_LIST[@]}
+    LOOP_COUNT=${#TOKEN_LIST[@]}
 else
-    LOOP_COUNT = ${#RECIPIENT_LIST[@]}
+    LOOP_COUNT=${#RECIPIENT_LIST[@]}
 fi
 
 
